@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>La Petite Pâtisserie</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Parisienne&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f9f506",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#23220f",
+                        "stone-dark": "#1c1c0d",
+                        "gold-accent": "#c5a059",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "script": ["Parisienne", "cursive"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "window-inset": "inset 0 10px 40px -10px rgba(0,0,0,0.8)",
+                        "facade": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                    },
+                    backgroundImage: {
+                        'cobblestone': "url('https://www.transparenttextures.com/patterns/cubes.png')", 
+                        'paris-skyline': "url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2973&auto=format&fit=crop')",
+                    }
+                },
+            },
+        }
+    </script>
+<style>.awning-stripe {
+    background: repeating-linear-gradient(90deg, #2d2d2a, #2d2d2a 40px, #3a3a36 40px, #3a3a36 80px)
+    }
+.window-glass {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%)
+    }
+.cobblestone-pavement {
+    background-color: #d1d1c7;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDEvN05xpiFyFAO7VHaP1FDhphhpQGLgWhfHI0n-LCEyEaTmmepUdW9tZYMhuzlkn_uPYMG7kOTO-ojC8ZMuA1Pj_9p6glbya4OORb5qhRi7ScsE5HRDXSloU4zm6c9V-7eBVkMEU05wQHgyl5GZEKj8KieYZUgwNfvDMAxR-XJ8KjWXjcRv2Vge-hG8CykGI3zfDwWMJP-wgJCCw3ApaTfQPkPp86WSdp4sxtgly1f7rBY_sjdBqfI2U4t1E7CjzojdjW67P-gMRs);}
+.lamppost-glow {
+    box-shadow: 0 0 60px 20px rgba(253, 224, 71, 0.2)
+    }</style>
+</head>
+<body class="bg-stone-200 dark:bg-stone-900 text-stone-dark dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-stone-dark">
+<div class="fixed inset-0 z-0 pointer-events-none opacity-20 dark:opacity-10 bg-bottom bg-cover bg-no-repeat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_88bfeldIrFmE5JGisZRJ-gm5Hh3Xdc9RlS7vvt5vdxPw7rGxa0VBZtfoH6y2YPYiE_otXAFAyaVmkeYPpH95fJnExY943l-vgxuNhguu5fDoANMCJMFmWKbmT7YGjenp9OPCbDTBlD-3bhBSXryBCl7OuWPPjiG6n0WcaD8RLaxYKS7yZvhKdshjtgBmklcVAKFEaUOqC_c4YUzpwS3he-SU5VL9mLbySTmQ0j4-1Wb-AYtcLrdI4e29ZGOg2kiy2G5hDARP4H8');"></div>
+<div class="layout-container flex flex-col flex-grow w-full max-w-[1440px] mx-auto border-x border-stone-300 dark:border-stone-800 bg-[#f4f4e6] dark:bg-[#1a190b] shadow-2xl relative z-10">
+<header class="relative z-20">
+<div class="h-4 w-full bg-stone-800"></div>
+<div class="h-16 w-full awning-stripe shadow-lg relative flex items-center justify-center border-b-4 border-stone-900 rounded-b-lg">
+<div class="absolute -bottom-2 w-full flex justify-center space-x-2 overflow-hidden px-4">
+<div class="w-full h-4 bg-transparent border-t border-dashed border-stone-600 opacity-20"></div>
+</div>
+</div>
+<div class="bg-background-light dark:bg-background-dark px-6 py-4 border-b border-[#e6e6d8] dark:border-stone-800 flex items-center justify-between sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl text-gold-accent">bakery_dining</span>
+<nav class="hidden md:flex items-center gap-8 pl-8">
+<a class="text-stone-dark dark:text-gray-200 text-sm font-medium hover:text-gold-accent transition-colors" href="#">Our Story</a>
+<a class="text-stone-dark dark:text-gray-200 text-sm font-medium hover:text-gold-accent transition-colors" href="#">Menu</a>
+<a class="text-stone-dark dark:text-gray-200 text-sm font-medium hover:text-gold-accent transition-colors" href="#">Events</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-stone-dark dark:text-white hover:text-gold-accent">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-2 text-stone-dark dark:text-white hover:text-gold-accent">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="md:hidden p-2 text-stone-dark dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center px-4 py-8 md:py-12 relative bg-[url('https://www.transparenttextures.com/patterns/concrete-wall.png')]">
+<div class="text-center mb-12 md:mb-16 relative z-10 w-full max-w-4xl mx-auto">
+<div class="inline-flex flex-col items-center border-b-2 border-double border-gold-accent/30 pb-6 px-10 bg-white/40 dark:bg-black/20 backdrop-blur-sm rounded-xl pt-4">
+<h1 class="font-script text-5xl md:text-7xl lg:text-8xl text-stone-800 dark:text-primary drop-shadow-sm mb-2">
+                        La Petite Pâtisserie
+                    </h1>
+<div class="flex items-center gap-4 text-gold-accent font-medium tracking-widest text-xs uppercase">
+<span class="h-px w-12 bg-gold-accent"></span>
+                        Est. 1924 • Paris
+                        <span class="h-px w-12 bg-gold-accent"></span>
+</div>
+</div>
+</div>
+<div class="w-full max-w-[1200px] grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-end relative z-20">
+<div class="hidden xl:block absolute -left-24 bottom-0 z-30 pointer-events-none">
+<div class="relative w-16 h-[500px] flex flex-col items-center justify-end">
+<div class="w-20 h-24 bg-stone-800 rounded-t-xl relative mb-2 flex items-center justify-center lamppost-glow">
+<div class="w-16 h-16 bg-[#fffee0] rounded-full opacity-80 blur-sm"></div>
+<div class="absolute top-0 w-24 h-4 bg-stone-900 rounded-t-full"></div>
+<div class="absolute bottom-0 w-16 h-20 border-x-4 border-stone-700"></div>
+</div>
+<div class="w-4 h-[400px] bg-gradient-to-r from-stone-800 to-stone-600 rounded-full"></div>
+<div class="w-16 h-24 bg-stone-800 rounded-t-lg shadow-lg -mb-4"></div>
+</div>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col group/window">
+<div class="relative h-[400px] md:h-[500px] rounded-t-full border-[12px] border-[#2d2d2a] bg-gray-900 overflow-hidden shadow-window-inset transform transition-transform duration-500 hover:scale-[1.01]">
+<div class="absolute inset-0 bg-cover bg-center opacity-90 group-hover/window:scale-105 transition-transform duration-700" data-alt="Colorful macarons stacked in a pyramid display inside a shop window" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAc9mVerT2dXdkE8Dp27Yc9eShIK_5dPA8uyoUb9vHKzObfMTjXAQkzwqkPdptMTy00J6NHF9_OD6dAXqchTAMBfpHr3IsmZQCBZYdUCZUXpM36QqI1ikk-vd6iWJjFQxiEM42CIB9eLftXg9ekTvZSk6p3UGypq4hqbSdw2zWVENsmv6aiCUpOZmxiuzMG9bnkupqSxQqyKi2aCSNmDkBpbmG_eyMFsTXpeO6UNDGqBxnPV2AaoG1L8nByfFQVegATJoRQ1pl_dmY');">
+</div>
+<div class="absolute inset-0 window-glass pointer-events-none z-10"></div>
+<div class="absolute bottom-10 left-0 right-0 flex justify-center z-20">
+<div class="bg-white/90 dark:bg-black/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-gold-accent/50 text-center">
+<h3 class="text-stone-dark dark:text-primary font-bold text-lg">Macaron Collection</h3>
+<p class="text-xs font-medium uppercase tracking-wide text-stone-600 dark:text-gray-300">New Flavors</p>
+</div>
+</div>
+</div>
+<div class="h-6 w-full bg-[#d6d6c9] dark:bg-[#2d2d2a] rounded-sm shadow-md mt-[-4px] relative z-20 border-t border-white/20"></div>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col relative -order-1 md:order-none mb-8 md:mb-0">
+<div class="relative h-[440px] md:h-[540px] border-x-[16px] border-t-[16px] border-[#2d2d2a] bg-stone-800/80 rounded-t-lg flex flex-col justify-end overflow-hidden shadow-2xl">
+<div class="absolute inset-0 bg-cover bg-center opacity-60 blur-[2px]" data-alt="Blurred view of a warm and cozy bakery interior with display counters" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASj89XvE5E8pfxDZ_c-9C94Nalf2hQhdILMukR_Nd1rmJ9f8eWzG1iX1P2Ttl9yMejWmdMeRZYiqJo3-sgkiFlRJRSMxS4qjJd8NZSkLVXXyoQER1NHNCRYAYVGNJGd9YIMNJZVJZCXKmnbZr5SZyDPwKjBD-81wFgRXijprvsNZIsisYcNJq1hk0WuPmTowzAq283--p-DBAyPxagwIcBS8CLixEN_IxiEmzo-mY4yv79M_fNogqGlmS5cRRE1LuJAGRNoS6hcCY');">
+</div>
+<div class="absolute inset-0 grid grid-cols-2 pointer-events-none">
+<div class="border-r-[8px] border-[#2d2d2a] h-full relative">
+<div class="absolute top-1/4 w-full h-[4px] bg-[#2d2d2a]"></div>
+<div class="absolute top-2/4 w-full h-[8px] bg-[#2d2d2a] flex items-center justify-end pr-2">
+<div class="w-2 h-12 bg-gold-accent rounded-sm shadow-md"></div>
+</div>
+<div class="absolute top-3/4 w-full h-[12px] bg-[#2d2d2a]"></div>
+</div>
+<div class="h-full relative">
+<div class="absolute top-1/4 w-full h-[4px] bg-[#2d2d2a]"></div>
+<div class="absolute top-2/4 w-full h-[8px] bg-[#2d2d2a] flex items-center justify-start pl-2">
+<div class="w-2 h-12 bg-gold-accent rounded-sm shadow-md"></div>
+</div>
+<div class="absolute top-3/4 w-full h-[12px] bg-[#2d2d2a]"></div>
+</div>
+</div>
+<div class="absolute top-1/3 w-full flex justify-center pointer-events-none">
+<div class="bg-black/60 text-white px-3 py-1 text-xs tracking-[0.2em] uppercase border border-gold-accent/30 font-light">
+                                Bienvenue
+                            </div>
+</div>
+<div class="relative z-30 p-8 pb-12 flex justify-center w-full bg-gradient-to-t from-black/80 to-transparent">
+<button class="group relative flex items-center justify-center gap-3 bg-primary text-stone-dark text-base font-bold px-8 py-4 rounded-full shadow-[0_0_20px_rgba(249,245,6,0.4)] hover:shadow-[0_0_30px_rgba(249,245,6,0.6)] hover:scale-105 transition-all duration-300 w-full max-w-[280px]">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">door_front</span>
+<span>Entrez / Enter Shop</span>
+</button>
+</div>
+</div>
+<div class="h-2 w-full bg-[#8c8c83] relative z-20"></div>
+</div>
+<div class="col-span-1 md:col-span-4 flex flex-col group/window">
+<div class="relative h-[400px] md:h-[500px] rounded-t-full border-[12px] border-[#2d2d2a] bg-gray-900 overflow-hidden shadow-window-inset transform transition-transform duration-500 hover:scale-[1.01]">
+<div class="absolute inset-0 bg-cover bg-center opacity-90 group-hover/window:scale-105 transition-transform duration-700" data-alt="Close up of delicious strawberry tarts and chocolate eclairs on a golden tray" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvDyb7LKPJsRQyH7yoXi2MEnLCY0x1ymdBdidIYkolarJ9n8tG7OiORkHWXSeC8hldGOpqIVssulQbE8DYTWtc6-rAQH4DiXAVv_h2qa0GLBRONULKh1zL4cvdLXN_yj0521VPQ8uRuzFCee-_086feG1JBO2pLSC_vvVinPSe8CaSDDLVST07Xh9WY88nzhJLrzwZX03H_2WWB8yV3p0nI0XXrl1r4S9IAM7hGEySOUsyrfov9AwZyRTpj9CCAcqlfMz7Ul1vGZQ');">
+</div>
+<div class="absolute inset-0 window-glass pointer-events-none z-10"></div>
+<div class="absolute bottom-10 left-0 right-0 flex justify-center z-20">
+<div class="bg-white/90 dark:bg-black/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-gold-accent/50 text-center">
+<h3 class="text-stone-dark dark:text-primary font-bold text-lg">Daily Specials</h3>
+<p class="text-xs font-medium uppercase tracking-wide text-stone-600 dark:text-gray-300">Freshly Baked</p>
+</div>
+</div>
+</div>
+<div class="h-6 w-full bg-[#d6d6c9] dark:bg-[#2d2d2a] rounded-sm shadow-md mt-[-4px] relative z-20 border-t border-white/20"></div>
+</div>
+<div class="hidden lg:block absolute -right-16 bottom-0 z-30 transform translate-y-4">
+<div class="relative w-40 flex flex-col items-center">
+<div class="relative z-10 flex flex-col items-center mb-[-10px]">
+<div class="w-24 h-2 bg-stone-300 rounded-full shadow-sm mb-[-1px]"></div> 
+<div class="w-1 h-16 bg-stone-800"></div> 
+<div class="w-12 h-1 bg-stone-800 rounded-full"></div> 
+</div>
+<div class="flex justify-between w-48 absolute bottom-0">
+<div class="w-12 h-20 border-4 border-stone-800 rounded-t-lg relative transform rotate-12 origin-bottom-right bg-white/10 backdrop-blur-sm">
+<div class="absolute top-1/2 w-full h-1 bg-stone-800"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-1 h-1/2 bg-stone-800"></div>
+</div>
+<div class="w-12 h-20 border-4 border-stone-800 rounded-t-lg relative transform -rotate-12 origin-bottom-left bg-white/10 backdrop-blur-sm">
+<div class="absolute top-1/2 w-full h-1 bg-stone-800"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 w-1 h-1/2 bg-stone-800"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden md:flex w-full max-w-[1250px] justify-between px-4 mt-[-20px] relative z-30 pointer-events-none">
+<div class="w-16 h-24 bg-stone-800 rounded-b-lg flex items-end justify-center pb-2 opacity-90 shadow-xl">
+<span class="material-symbols-outlined text-green-700 text-4xl transform -translate-y-2">potted_plant</span>
+</div>
+<div class="w-16 h-24 bg-stone-800 rounded-b-lg flex items-end justify-center pb-2 opacity-90 shadow-xl">
+<span class="material-symbols-outlined text-green-700 text-4xl transform -translate-y-2">potted_plant</span>
+</div>
+</div>
+</main>
+<div class="relative z-20 cobblestone-pavement border-t border-stone-400 dark:border-stone-800 pt-8 pb-12 overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-black/20 to-transparent pointer-events-none"></div>
+<footer class="max-w-[1440px] mx-auto px-6 relative z-10">
+<div class="bg-[#f4f4e6] dark:bg-[#1a190b] rounded-2xl shadow-xl p-8 max-w-[960px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left border border-stone-200 dark:border-stone-800">
+<div class="flex flex-col items-center md:items-start gap-2">
+<h4 class="font-bold text-stone-dark dark:text-white uppercase tracking-wider text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-gold-accent">location_on</span> Visit Us
+                        </h4>
+<p class="text-stone-600 dark:text-stone-400 text-sm leading-relaxed">
+                            12 Rue de la Pâtisserie<br/>
+                            75001 Paris, France
+                        </p>
+<div class="w-full h-24 bg-gray-200 mt-2 rounded overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover grayscale opacity-60 hover:opacity-100 transition-opacity" data-alt="Map view of central Paris streets" data-location="Paris, France" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPrqyZlIM9pr56DV6o6osINjJiQBc5Oq2cJ-oNTy6z3g1FQhtBXOnqXU4ElyUqzzob8csrD-rjUbzjyzf3lkTZPRGt_A3tUNlaMvh8HB6QLanXZezvLMgASaCDO_8Z-_dhcYjCoLAORmQ-iPU4asaMCO-HvPGq2K1e_gmrpmhipd_0f7Fvonut4i3DnTUsSflMBuToj6tYobjtdFjS6htjiH2bGoxmzQ4TOQh_9GgoabnwPbDDznUZTGCy6yjrVav_Cx7W7hEggvU"/>
+</div>
+</div>
+<div class="flex flex-col items-center gap-2">
+<h4 class="font-bold text-stone-dark dark:text-white uppercase tracking-wider text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-gold-accent">schedule</span> Opening Hours
+                        </h4>
+<ul class="text-stone-600 dark:text-stone-400 text-sm space-y-1 w-full">
+<li class="flex justify-between w-full max-w-[180px] mx-auto border-b border-dotted border-stone-400/30 pb-1"><span>Mon - Fri</span> <span>07:00 - 19:00</span></li>
+<li class="flex justify-between w-full max-w-[180px] mx-auto border-b border-dotted border-stone-400/30 pb-1"><span>Saturday</span> <span>08:00 - 20:00</span></li>
+<li class="flex justify-between w-full max-w-[180px] mx-auto"><span>Sunday</span> <span>08:00 - 14:00</span></li>
+</ul>
+<button class="mt-4 text-xs font-bold text-stone-dark bg-primary/20 px-3 py-1 rounded-full hover:bg-primary transition-all">
+                            Book a Table on the Terrace
+                        </button>
+</div>
+<div class="flex flex-col items-center md:items-end gap-4">
+<h4 class="font-bold text-stone-dark dark:text-white uppercase tracking-wider text-sm flex items-center gap-2">
+                            Follow the Aroma <span class="material-symbols-outlined text-gold-accent">favorite</span>
+</h4>
+<div class="flex gap-3">
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-stone-200 dark:bg-stone-800 text-stone-dark dark:text-white hover:bg-primary transition-colors shadow-sm" href="#">
+<span class="text-xs font-bold">IG</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-stone-200 dark:bg-stone-800 text-stone-dark dark:text-white hover:bg-primary transition-colors shadow-sm" href="#">
+<span class="text-xs font-bold">FB</span>
+</a>
+</div>
+<p class="text-[10px] text-stone-500 max-w-[200px] text-center md:text-right mt-2 italic">
+                            © 2024 La Petite Pâtisserie. <br/>Crafted with love and butter.
+                        </p>
+</div>
+</div>
+</footer>
+</div>
+</div>
+
+</body></html>
